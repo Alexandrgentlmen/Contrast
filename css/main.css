@@ -1429,6 +1429,9 @@ a {
 .featured-product__item .product__img {
   padding: 40px 0;
 }
+.featured-product .swiper {
+  overflow: visible;
+}
 
 .product {
   position: relative;
