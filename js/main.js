@@ -72,7 +72,7 @@ const swiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](".swiper-speak
 });
 const swiper2 = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](".swiper-featured", {
   slidesPerView: 4,
-  spaceBetween: 30,
+  spaceBetween: 29,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
