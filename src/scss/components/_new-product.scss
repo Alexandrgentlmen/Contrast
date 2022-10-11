@@ -1,0 +1,89 @@
+.new-product {
+  padding-bottom: 110px;
+  background-color: var(--light-color);
+
+  &__container {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  &__products {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1fr, 1fr);
+    width: 50%;
+  }
+}
+
+.phase-test {
+  position: relative;
+  width: 50%;
+  margin: 0px 0px 0px 40px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-image: url("../img/repairing.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 40px 33px 40px 33px;
+    border-radius: 5px;
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: var(--light-color);
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    z-index: 10;
+  }
+
+  &__checklist {
+    display: flex;
+    margin: 20px 0px 40px 0px;
+    align-self: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__check {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 23px;
+    color: var(--text-grey);
+    position: relative;
+    margin-left: 20px;
+    padding: 0px 0px 7px 0px;
+    width: 40%;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  &__button:hover .move-right {
+    transition: all 0.2s ease;
+    animation-name: move-reverse;
+    animation-direction: alternate;
+    animation-duration: 0.4s;
+    animation-iteration-count: infinite;
+  }
+}
+
+.check-mark {
+  &::before {
+    position: absolute;
+    top: 4px;
+    left: -22px;
+    font: var(--fa-font-solid);
+    content: "\f00c";
+    color: var(--main-color);
+  }
+}
