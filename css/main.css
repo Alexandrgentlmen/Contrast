@@ -758,16 +758,16 @@ a {
 }
 .choose-us__point-quality::after {
   width: 43px;
-  background-image: url("/img/quality.png");
+  background-image: url("../img/quality.png");
 }
 .choose-us__point-original::after {
-  background-image: url("/img/original.png");
+  background-image: url("../img/original.png");
 }
 .choose-us__point-services::after {
-  background-image: url("/img/services.png");
+  background-image: url("../img/services.png");
 }
 .choose-us__point-delivery::after {
-  background-image: url("/img/delivery.png");
+  background-image: url("../img/delivery.png");
 }
 
 .el-store {
@@ -1431,7 +1431,24 @@ a {
 }
 
 .swiper.swiper-featured {
+  margin: 0 10px 0 -10px;
+  padding: 0 0 80px 0;
   overflow: visible;
+}
+.swiper.swiper-featured .swiper-pagination-bullet {
+  border-radius: 2px;
+  width: 8px;
+  height: 3px;
+  -webkit-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  transition: width 0.3s;
+}
+.swiper.swiper-featured .swiper-pagination-bullet .swiper-pagination-bullet-active {
+  -webkit-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  transition: width 0.3s;
+  width: 20px;
+  background-color: var(--main-color);
 }
 
 .product {
