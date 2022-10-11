@@ -1408,6 +1408,9 @@ a {
 .featured-product__container {
   overflow: hidden;
 }
+.featured-product__container .swiper {
+  overflow: visible;
+}
 .featured-product__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1428,9 +1431,6 @@ a {
 }
 .featured-product__item .product__img {
   padding: 40px 0;
-}
-.featured-product .swiper {
-  overflow: visible;
 }
 
 .product {
