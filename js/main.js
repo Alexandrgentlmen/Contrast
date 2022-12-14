@@ -5,9 +5,13 @@
 /*!*******************************!*\
   !*** ./src/js/_components.js ***!
   \*******************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-console.log('components');
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_videoStart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/videoStart */ "./src/js/components/videoStart.js");
+
+(0,_components_videoStart__WEBPACK_IMPORTED_MODULE_0__.startVideoLoader)();
 
 /***/ }),
 
@@ -72,7 +76,7 @@ const swiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](".swiper-speak
 });
 const swiper2 = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](".swiper-featured", {
   slidesPerView: 4,
-  spaceBetween: 29,
+  spaceBetween: 19,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -81,7 +85,7 @@ const swiper2 = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](".swiper-feat
   loopedSlides: 4,
   dynamicBullets: true,
   autoplay: {
-    delay: 10000
+    delay: 2000
   },
   loop: true,
   centeredSlidesBounds: true
@@ -149,6 +153,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendor_font_awesome_js_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_vendor_font_awesome_js_js__WEBPACK_IMPORTED_MODULE_1__);
 
 
+
+/***/ }),
+
+/***/ "./src/js/components/videoStart.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/videoStart.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "startVideoLoader": () => (/* binding */ startVideoLoader)
+/* harmony export */ });
+const videoEl = document.getElementsByClassName('video-on-start'); // const haveRemove = videoEl[0].classList.contains("remove");
+
+function videoStart() {
+  setTimeout(() => {
+    videoEl[0].classList.add('remove');
+  }, 1500);
+  setTimeout(() => {
+    videoEl[0].classList.add('visually-hidden');
+  }, 2500);
+}
+
+const startVideoLoader = () => {
+  document.addEventListener("DOMContentLoaded", videoStart);
+};
 
 /***/ }),
 
@@ -13244,7 +13276,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_vars */ "./src/js/_vars.js");
 /* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_functions */ "./src/js/_functions.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_components */ "./src/js/_components.js");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
