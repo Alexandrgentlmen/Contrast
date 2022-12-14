@@ -574,21 +574,17 @@ a {
   background-color: var(--main-color);
 }
 
-.tel-icon-header::before {
+.tel-icon-header {
   position: absolute;
   top: 4px;
   left: -17px;
-  font: var(--fa-font-solid);
-  content: "\f095";
   color: var(--color-metall);
 }
 
-.email-icon-header::before {
+.email-icon-header {
   position: absolute;
   top: 4px;
   left: -17px;
-  font: var(--fa-font-solid);
-  content: "\f0e0";
   color: var(--color-metall);
 }
 
@@ -1157,30 +1153,24 @@ a {
   font-weight: 400;
 }
 
-.map-icon::before {
+.map-icon {
   position: absolute;
   top: 0px;
   left: -18px;
-  font: var(--fa-font-solid);
-  content: "\f59f";
   color: var(--color-metall);
 }
 
-.tel-icon::before {
+.tel-icon {
   position: absolute;
   top: 2px;
   left: -37px;
-  font: var(--fa-font-solid);
-  content: "\f095";
   color: var(--color-metall);
 }
 
-.email-icon::before {
+.email-icon {
   position: absolute;
   top: 2px;
   left: -37px;
-  font: var(--fa-font-solid);
-  content: "\f0e0";
   color: var(--color-metall);
 }
 
@@ -1337,7 +1327,7 @@ a {
 }
 .online-shop__image {
   position: relative;
-  background-image: url("/img/computer-detail.jpg");
+  background-image: url("../img/computer-detail.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   -ms-flex-line-pack: center;
@@ -1566,19 +1556,17 @@ a {
   -o-transition: background-color 0.4s;
   transition: background-color 0.4s;
 }
-.add-cart__link:hover::before {
+.add-cart__link:hover .add-cart__svg {
   -webkit-transition: color 0.4s;
   -o-transition: color 0.4s;
   transition: color 0.4s;
   color: var(--main-color);
 }
-.add-cart__link::before {
+.add-cart__svg {
   position: absolute;
-  content: "\f07a";
   top: 50%;
   left: 50%;
   display: block;
-  font: var(--fa-font-solid);
   font-size: 18px;
   font-weight: 900;
   color: var(--background-color);
@@ -1616,19 +1604,17 @@ a {
   -o-transition: background-color 0.4s;
   transition: background-color 0.4s;
 }
-.view-details__link:hover::before {
+.view-details__link:hover .view-details__svg {
   -webkit-transition: color 0.4s;
   -o-transition: color 0.4s;
   transition: color 0.4s;
   color: var(--main-color);
 }
-.view-details__link::before {
+.view-details__svg {
   position: absolute;
-  content: "\f085";
   top: 50%;
   left: 50%;
   display: block;
-  font: var(--fa-font-solid);
   font-size: 18px;
   font-weight: 900;
   color: var(--background-color);
@@ -1731,17 +1717,6 @@ a {
 }
 .raitng__item {
   display: inline-block;
-}
-.raitng__item:hover::before {
-  -webkit-transition: color 0.4s;
-  -o-transition: color 0.4s;
-  transition: color 0.4s;
-  color: var(--main-color);
-}
-.raitng__item::before {
-  content: "\f005";
-  display: inline-block;
-  font: var(--fa-font-solid);
   font-size: 15px;
   font-weight: 900;
   color: var(--text-grey);
@@ -1749,6 +1724,12 @@ a {
   -o-transition: color 0.4s;
   transition: color 0.4s;
   cursor: pointer;
+}
+.raitng__item:hover {
+  -webkit-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
+  color: var(--main-color);
 }
 
 .video-block {
