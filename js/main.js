@@ -10,7 +10,10 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_videoStart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/videoStart */ "./src/js/components/videoStart.js");
+/* harmony import */ var _components_progressbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/progressbar */ "./src/js/components/progressbar.js");
 
+
+(0,_components_progressbar__WEBPACK_IMPORTED_MODULE_1__.addProgressbarLoader)();
 (0,_components_videoStart__WEBPACK_IMPORTED_MODULE_0__.startVideoLoader)();
 
 /***/ }),
@@ -89,6 +92,17 @@ const swiper2 = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](".swiper-feat
   },
   loop: true,
   centeredSlidesBounds: true
+});
+const swiper3 = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](".product-gallery__swiper", {
+  slidesPerView: 3,
+  grid: {
+    rows: 2
+  },
+  spaceBetween: 12,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true
+  }
 }); // Подключение анимаций по скроллу
 // import AOS from 'aos';
 // AOS.init();
@@ -156,6 +170,29 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/components/progressbar.js":
+/*!******************************************!*\
+  !*** ./src/js/components/progressbar.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "addProgressbarLoader": () => (/* binding */ addProgressbarLoader)
+/* harmony export */ });
+function progressbarStart() {
+  setTimeout(() => {
+    document.body.classList.add('load');
+  }, 1500);
+}
+
+const addProgressbarLoader = () => {
+  document.addEventListener("DOMContentLoaded", progressbarStart);
+};
+
+/***/ }),
+
 /***/ "./src/js/components/videoStart.js":
 /*!*****************************************!*\
   !*** ./src/js/components/videoStart.js ***!
@@ -174,6 +211,7 @@ function videoStart() {
     videoEl[0].classList.add('remove');
   }, 1500);
   setTimeout(() => {
+    document.body.classList.remove('dis-scroll');
     videoEl[0].classList.add('visually-hidden');
   }, 2500);
 }
