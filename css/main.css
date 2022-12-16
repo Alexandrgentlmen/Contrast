@@ -1499,21 +1499,26 @@ a {
 
 .product-gallery {
   background-color: var(--light-color);
-  position: relative;
+}
+.product-gallery__container {
+  max-height: 660px;
 }
 .product-gallery__swiper {
-  width: 100%;
   height: 100%;
-  margin-left: auto;
-  margin-right: auto;
 }
-.product-gallery__list {
-  padding-left: 0px;
-  width: 100%;
+
+.swiper-grid-column > .swiper-wrapper {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
-.product-gallery__list > .product {
-  max-width: 32%;
-  height: calc((100% - 20px) / 2) !important;
+
+.swiper-grid > .swiper-wrapper {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .video-on-start {
