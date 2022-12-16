@@ -68,7 +68,7 @@ console.log((0,_functions_mobile_check__WEBPACK_IMPORTED_MODULE_0__.mobileCheck)
 // Подключение свайпера
 
 
-swiper__WEBPACK_IMPORTED_MODULE_1__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_1__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_1__.Autoplay]);
+swiper__WEBPACK_IMPORTED_MODULE_1__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_1__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_1__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_1__.Grid]);
 const swiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](".swiper-speak-gallery", {
   slidesPerView: 'auto',
   direction: 'horizontal',
@@ -98,7 +98,7 @@ const swiper3 = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](".product-gal
   grid: {
     rows: 2
   },
-  spaceBetween: 12,
+  spaceBetween: 14,
   pagination: {
     el: ".swiper-pagination",
     clickable: true

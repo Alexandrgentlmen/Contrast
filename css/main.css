@@ -671,7 +671,7 @@ a {
   border-color: var(--color-metall);
   border-radius: 5px 5px 5px 5px;
   background-color: var(--light-color);
-  background-image: url("/img/layer/Layer_29.png");
+  background-image: url("../img/layer/Layer_29.png");
 }
 .weekly-sale__products {
   display: -ms-grid;
@@ -1013,8 +1013,6 @@ a {
   position: absolute;
   top: 4px;
   left: -22px;
-  font: var(--fa-font-solid);
-  content: "\f00c";
   color: var(--main-color);
 }
 
@@ -1501,6 +1499,7 @@ a {
 
 .product-gallery {
   background-color: var(--light-color);
+  position: relative;
 }
 .product-gallery__swiper {
   width: 100%;
