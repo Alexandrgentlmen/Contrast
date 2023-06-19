@@ -14,14 +14,17 @@
   <link rel="preload" href="fonts/Poppins-Medium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=eb405125-b825-4781-9fbd-f6f10f6ead2a&lang=ru_RU"
+    type="text/javascript"></script>
   <link rel="stylesheet" href="css/vendor.css">
   <link rel="stylesheet" href="css/main.css">
+
   <script defer src="js/main.js"></script>
 </head>
 
 <body class="page__body">
   <div class="site-container">
-    <header class="header">
+    <header class="header" id="page">
   <div class="container header__container">
     <a class="header__logo"></a>
     <nav class="header__nav nav">
@@ -29,11 +32,25 @@
         <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
         <li class="nav__item"><a href="about.html" class="nav__link">О нас</a></li>
         <li class="nav__item nav__item_active"><a href="#" class="nav__link">Магазин</a></li>
-        <li class="nav__item"><a href="pages.html" class="nav__link">Страницы</a></li>
-        <li class="nav__item"><a href="blog.html" class="nav__link">Блог</a></li>
-        <li class="nav__item"><a href="contact.html" class="nav__link">Контакты</a></li>
+        <li class="nav__item">
+          <a href="pages.html" class="nav__link">Страницы <i class="fa-solid fa-caret-down fa-lg"></i></a>
+          <ul class="nav__sub-list list-reset">
+            <li class="nav__sub-item">
+              <a href="catalog.html" class="nav__link">Товары</a>
+            </li>
+            <li class="nav__sub-item">
+              <a href="faq.html" class="nav__link">FAQ</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav__item"><a href="index.html" class="nav__link">Блог</a></li>
+        <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
       </ul>
     </nav>
+    <button class="basket-btn btn-reset" data-graph-path="basketmodal" data-graph-animation="custom">
+      <i class="fa-solid fa-basket-shopping"></i>
+      <span class="amount-product">1</span>
+    </button>
     <ul class="header__contacts-list list-reset">
       <li class="header__contact">
         <a href="tel:89052216144" class="header__link telefone"><i class="tel-icon-header fa-solid fa-phone"></i>+7 905 221-61-44</a>
@@ -259,7 +276,7 @@
            <img src="img/product-electric.png" alt="объект" class="product__img">
         </li>
         <li class="swiper-slide featured-product__item product">
-           <img src="img/product-lamp.png" alt="объект" class="product__img">
+           <img src="img/lamp2.png" alt="объект" class="product__img">
         </li>
       </ul>
       <div class="swiper-pagination"></div>
@@ -297,344 +314,348 @@
   <div class="product-gallery__container container">
     <div class="swiper product-gallery__swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide product product-DIN35">
-          <img src="img/2R_DIN35.jpg" alt="объект" class="product__img">
-          <div class="featured-product__box image-box">
-            <ul class="image-box__list list-reset">
-              <li class="image-box__item add-cart">
-                <a href="#" class="add-cart__link">Add to cart
-                  <i class="add-cart__svg fa-solid fa-cart-shopping"></i>
-                </a>
-              </li>
-              <li class="image-box__item view-details">
-                <a href="#" class="view-details__link">view details
-                  <i class="view-details__svg fa-solid fa-gears"></i>
-                </a>
-              </li>
-            </ul>
-           </div>
-          <span class="product__flag">Sale!</span>
-          <button class="product__link btn-reset"></button>
-          <a href="#" class="product__link"></a>
-          <div class="product__details">
-            <div class="product__rating raitng">
-              <ul class="raitng__list list-reset">
-                <li class="raitng__item fa-solid fa-star">
+        <div class="swiper-slide">
+          <div class="product product-DIN35" role="group" aria-label="1/9">
+            <img src="img/2R_DIN35.jpg" alt="объект" class="product__img">
+            <div class="featured-product__box image-box">
+              <ul class="image-box__list list-reset">
+                <li class="image-box__item add-cart">
+                  <a href="#" class="add-cart__link">Add to cart
+                    <i class="add-cart__svg fa-solid fa-cart-shopping"></i>
+                  </a>
                 </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
+                <li class="image-box__item view-details">
+                  <a href="#" class="view-details__link">view details
+                    <i class="view-details__svg fa-solid fa-gears"></i>
+                  </a>
                 </li>
               </ul>
-              <span class="product__star-text">Rated<strong>0</strong> out of 5</span>
             </div>
-            <h3 class="product__title">Потенциометры на рейку DIN35</h3>
-            <p class="product__price">
-              <span class="product__old-price"><strike>P44.00</strike></span>
-              <u>P11.00</u>
-            </p>
+            <span class="product__flag">Sale!</span>
+            <button class="product__link btn-reset"></button>
+            <a href="#" class="product__link"></a>
+            <div class="product__details">
+              <div class="product__rating raitng">
+                <ul class="raitng__list list-reset">
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                </ul>
+                <span class="product__star-text">Rated<strong>0</strong> out of 5</span>
+              </div>
+              <h3 class="product__title">Потенциометры на рейку DIN35</h3>
+              <p class="product__price">
+                <span class="product__old-price"><strike>P44.00</strike></span>
+                <u>P11.00</u>
+              </p>
+            </div>
+          </div>
+          <div class="product product-RTT" role="group" aria-label="2/9">
+            <img src="img/RTT.jpg" alt="объект" class="product__img">
+            <div class="featured-product__box image-box">
+              <ul class="image-box__list list-reset">
+                <li class="image-box__item add-cart">
+                  <a href="#" class="add-cart__link">Add to cart
+                    <i class="add-cart__svg fa-solid fa-cart-shopping"></i>
+                  </a>
+                </li>
+                <li class="image-box__item view-details">
+                  <a href="#" class="view-details__link">view details
+                    <i class="view-details__svg fa-solid fa-gears"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <span class="product__flag">Sale!</span>
+            <button class="product__link btn-reset"></button>
+            <a href="#" class="product__link"></a>
+            <div class="product__details">
+              <div class="product__rating raitnig">
+                <ul class="raitng__list list-reset">
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                </ul>
+                <span class="product__star-text">Rated<strong>0</strong> out of 5</span>
+              </div>
+              <h3 class="product__title">Регулятор тиристорный трехфазный</h3>
+              <p class="product__price">
+                <span class="product__old-price"><strike>P44.00</strike></span>
+                <u>P11.00</u>
+              </p>
+            </div>
+          </div>
+          <div class="product product-TRPS123" role="group" aria-label="3/9">
+            <img src="img/TRPS123.jpg" alt="объект" class="product__img">
+            <div class="featured-product__box image-box">
+              <ul class="image-box__list list-reset">
+                <li class="image-box__item add-cart">
+                  <a href="#" class="add-cart__link">Add to cart
+                    <i class="add-cart__svg fa-solid fa-cart-shopping"></i>
+                  </a>
+                </li>
+                <li class="image-box__item view-details">
+                  <a href="#" class="view-details__link">view details
+                    <i class="view-details__svg fa-solid fa-gears"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <button class="product__link btn-reset"></button>
+            <span class="product__flag">Sale!</span>
+            <a href="#" class="product__link"></a>
+            <div class="product__details">
+              <div class="product__rating raiting">
+                <ul class="raitng__list list-reset">
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                </ul>
+                <span class="product__star-text">Rated<strong>0</strong> out of 5</span>
+              </div>
+              <h3 class="product__title">Преобразователь 4-20 мА ТРПС 1-2-3</h3>
+              <p class="product__price">
+                <span class="product__old-price"><strike>P44.00</strike></span>
+                <u>P11.00</u>
+              </p>
+            </div>
+          </div>
+          <div class="product product-TRPS183" role="group" aria-label="4/9">
+            <img src="img/TRPS183.jpg" alt="объект" class="product__img">
+            <div class="featured-product__box image-box">
+              <ul class="image-box__list list-reset">
+                <li class="image-box__item add-cart">
+                  <a href="#" class="add-cart__link">Add to cart
+                    <i class="add-cart__svg fa-solid fa-cart-shopping"></i>
+                  </a>
+                </li>
+                <li class="image-box__item view-details">
+                  <a href="#" class="view-details__link">view details
+                    <i class="view-details__svg fa-solid fa-gears"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <button class="product__link btn-reset"></button>
+            <span class="product__flag">Sale!</span>
+            <a href="#" class="product__link"></a>
+            <div class="product__details">
+              <div class="product__rating raiting">
+                <ul class="raitng__list list-reset">
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                </ul>
+                <span class="product__star-text">Rated<strong>0</strong> out of 5</span>
+              </div>
+              <h3 class="product__title">ТРПС1-8-3 Преобразователь 4-20 мА</h3>
+              <p class="product__price">
+                <span class="product__old-price"><strike>P44.00</strike></span>
+                <u>P11.00</u>
+              </p>
+            </div>
           </div>
         </div>
-        <div class="swiper-slide product product-RTT">
-          <img src="img/RTT.jpg" alt="объект" class="product__img">
-          <div class="featured-product__box image-box">
-            <ul class="image-box__list list-reset">
-              <li class="image-box__item add-cart">
-                <a href="#" class="add-cart__link">Add to cart
-                  <i class="add-cart__svg fa-solid fa-cart-shopping"></i>
-                </a>
-              </li>
-              <li class="image-box__item view-details">
-                <a href="#" class="view-details__link">view details
-                  <i class="view-details__svg fa-solid fa-gears"></i>
-                </a>
-              </li>
-            </ul>
-           </div>
-          <span class="product__flag">Sale!</span>
-          <button class="product__link btn-reset"></button>
-          <a href="#" class="product__link"></a>
-          <div class="product__details">
-            <div class="product__rating raitnig">
-              <ul class="raitng__list list-reset">
-                <li class="raitng__item fa-solid fa-star">
+        <div class="swiper-slide">
+          <div class="product product-DIN35" role="group" aria-label="5/9">
+            <img src="img/2R_DIN35.jpg" alt="объект" class="product__img">
+            <div class="featured-product__box image-box">
+              <ul class="image-box__list list-reset">
+                <li class="image-box__item add-cart">
+                  <a href="#" class="add-cart__link">Add to cart
+                    <i class="add-cart__svg fa-solid fa-cart-shopping"></i>
+                  </a>
                 </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
+                <li class="image-box__item view-details">
+                  <a href="#" class="view-details__link">view details
+                    <i class="view-details__svg fa-solid fa-gears"></i>
+                  </a>
                 </li>
               </ul>
-              <span class="product__star-text">Rated<strong>0</strong> out of 5</span>
             </div>
-            <h3 class="product__title">Регулятор тиристорный трехфазный</h3>
-            <p class="product__price">
-              <span class="product__old-price"><strike>P44.00</strike></span>
-              <u>P11.00</u>
-            </p>
+            <span class="product__flag">Sale!</span>
+            <button class="product__link btn-reset"></button>
+            <a href="#" class="product__link"></a>
+            <div class="product__details">
+              <div class="product__rating raitng">
+                <ul class="raitng__list list-reset">
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                </ul>
+                <span class="product__star-text">Rated<strong>0</strong> out of 5</span>
+              </div>
+              <h3 class="product__title">Потенциометры на рейку DIN35</h3>
+              <p class="product__price">
+                <span class="product__old-price"><strike>P44.00</strike></span>
+                <u>P11.00</u>
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="swiper-slide product product-TRPS123">
-          <img src="img/TRPS123.jpg" alt="объект" class="product__img">
-          <div class="featured-product__box image-box">
-            <ul class="image-box__list list-reset">
-              <li class="image-box__item add-cart">
-                <a href="#" class="add-cart__link">Add to cart
-                  <i class="add-cart__svg fa-solid fa-cart-shopping"></i>
-                </a>
-              </li>
-              <li class="image-box__item view-details">
-                <a href="#" class="view-details__link">view details
-                  <i class="view-details__svg fa-solid fa-gears"></i>
-                </a>
-              </li>
-            </ul>
-           </div>
-          <button class="product__link btn-reset"></button>
-          <span class="product__flag">Sale!</span>
-          <a href="#" class="product__link"></a>
-          <div class="product__details">
-            <div class="product__rating raiting">
-              <ul class="raitng__list list-reset">
-                <li class="raitng__item fa-solid fa-star">
+          <div class="product product-RTT" role="group" aria-label="6/9">
+            <img src="img/RTT.jpg" alt="объект" class="product__img">
+            <div class="featured-product__box image-box">
+              <ul class="image-box__list list-reset">
+                <li class="image-box__item add-cart">
+                  <a href="#" class="add-cart__link">Add to cart
+                    <i class="add-cart__svg fa-solid fa-cart-shopping"></i>
+                  </a>
                 </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
+                <li class="image-box__item view-details">
+                  <a href="#" class="view-details__link">view details
+                    <i class="view-details__svg fa-solid fa-gears"></i>
+                  </a>
                 </li>
               </ul>
-              <span class="product__star-text">Rated<strong>0</strong> out of 5</span>
             </div>
-            <h3 class="product__title">Преобразователь 4-20 мА ТРПС 1-2-3</h3>
-            <p class="product__price">
-              <span class="product__old-price"><strike>P44.00</strike></span>
-              <u>P11.00</u>
-            </p>
+            <span class="product__flag">Sale!</span>
+            <button class="product__link btn-reset"></button>
+            <a href="#" class="product__link"></a>
+            <div class="product__details">
+              <div class="product__rating raitnig">
+                <ul class="raitng__list list-reset">
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                </ul>
+                <span class="product__star-text">Rated<strong>0</strong> out of 5</span>
+              </div>
+              <h3 class="product__title">Регулятор тиристорный трехфазный</h3>
+              <p class="product__price">
+                <span class="product__old-price"><strike>P44.00</strike></span>
+                <u>P11.00</u>
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="swiper-slide product product-TRPS183">
-          <img src="img/TRPS183.jpg" alt="объект" class="product__img">
-          <div class="featured-product__box image-box">
-            <ul class="image-box__list list-reset">
-              <li class="image-box__item add-cart">
-                <a href="#" class="add-cart__link">Add to cart
-                  <i class="add-cart__svg fa-solid fa-cart-shopping"></i>
-                </a>
-              </li>
-              <li class="image-box__item view-details">
-                <a href="#" class="view-details__link">view details
-                  <i class="view-details__svg fa-solid fa-gears"></i>
-                </a>
-              </li>
-            </ul>
-           </div>
-          <button class="product__link btn-reset"></button>
-          <span class="product__flag">Sale!</span>
-          <a href="#" class="product__link"></a>
-          <div class="product__details">
-            <div class="product__rating raiting">
-              <ul class="raitng__list list-reset">
-                <li class="raitng__item fa-solid fa-star">
+          <div class="product product-TRPS123" role="group" aria-label="7/9">
+            <img src="img/TRPS123.jpg" alt="объект" class="product__img">
+            <div class="featured-product__box image-box">
+              <ul class="image-box__list list-reset">
+                <li class="image-box__item add-cart">
+                  <a href="#" class="add-cart__link">Add to cart
+                    <i class="add-cart__svg fa-solid fa-cart-shopping"></i>
+                  </a>
                 </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
+                <li class="image-box__item view-details">
+                  <a href="#" class="view-details__link">view details
+                    <i class="view-details__svg fa-solid fa-gears"></i>
+                  </a>
                 </li>
               </ul>
-              <span class="product__star-text">Rated<strong>0</strong> out of 5</span>
             </div>
-            <h3 class="product__title">ТРПС1-8-3 Преобразователь 4-20 мА</h3>
-            <p class="product__price">
-              <span class="product__old-price"><strike>P44.00</strike></span>
-              <u>P11.00</u>
-            </p>
+            <button class="product__link btn-reset"></button>
+            <span class="product__flag">Sale!</span>
+            <a href="#" class="product__link"></a>
+            <div class="product__details">
+              <div class="product__rating raiting">
+                <ul class="raitng__list list-reset">
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                </ul>
+                <span class="product__star-text">Rated<strong>0</strong> out of 5</span>
+              </div>
+              <h3 class="product__title">Преобразователь 4-20 мА ТРПС 1-2-3</h3>
+              <p class="product__price">
+                <span class="product__old-price"><strike>P44.00</strike></span>
+                <u>P11.00</u>
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="swiper-slide product product-DIN35">
-          <img src="img/2R_DIN35.jpg" alt="объект" class="product__img">
-          <div class="featured-product__box image-box">
-            <ul class="image-box__list list-reset">
-              <li class="image-box__item add-cart">
-                <a href="#" class="add-cart__link">Add to cart
-                  <i class="add-cart__svg fa-solid fa-cart-shopping"></i>
-                </a>
-              </li>
-              <li class="image-box__item view-details">
-                <a href="#" class="view-details__link">view details
-                  <i class="view-details__svg fa-solid fa-gears"></i>
-                </a>
-              </li>
-            </ul>
-           </div>
-          <span class="product__flag">Sale!</span>
-          <button class="product__link btn-reset"></button>
-          <a href="#" class="product__link"></a>
-          <div class="product__details">
-            <div class="product__rating raitng">
-              <ul class="raitng__list list-reset">
-                <li class="raitng__item fa-solid fa-star">
+          <div class="product product-TRPS183" role="group" aria-label="8/9">
+            <img src="img/TRPS183.jpg" alt="объект" class="product__img">
+            <div class="featured-product__box image-box">
+              <ul class="image-box__list list-reset">
+                <li class="image-box__item add-cart">
+                  <a href="#" class="add-cart__link">Add to cart
+                    <i class="add-cart__svg fa-solid fa-cart-shopping"></i>
+                  </a>
                 </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
+                <li class="image-box__item view-details">
+                  <a href="#" class="view-details__link">view details
+                    <i class="view-details__svg fa-solid fa-gears"></i>
+                  </a>
                 </li>
               </ul>
-              <span class="product__star-text">Rated<strong>0</strong> out of 5</span>
             </div>
-            <h3 class="product__title">Потенциометры на рейку DIN35</h3>
-            <p class="product__price">
-              <span class="product__old-price"><strike>P44.00</strike></span>
-              <u>P11.00</u>
-            </p>
-          </div>
-        </div>
-        <div class="swiper-slide product product-RTT">
-          <img src="img/RTT.jpg" alt="объект" class="product__img">
-          <div class="featured-product__box image-box">
-            <ul class="image-box__list list-reset">
-              <li class="image-box__item add-cart">
-                <a href="#" class="add-cart__link">Add to cart
-                  <i class="add-cart__svg fa-solid fa-cart-shopping"></i>
-                </a>
-              </li>
-              <li class="image-box__item view-details">
-                <a href="#" class="view-details__link">view details
-                  <i class="view-details__svg fa-solid fa-gears"></i>
-                </a>
-              </li>
-            </ul>
-           </div>
-          <span class="product__flag">Sale!</span>
-          <button class="product__link btn-reset"></button>
-          <a href="#" class="product__link"></a>
-          <div class="product__details">
-            <div class="product__rating raitnig">
-              <ul class="raitng__list list-reset">
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-              </ul>
-              <span class="product__star-text">Rated<strong>0</strong> out of 5</span>
+            <button class="product__link btn-reset"></button>
+            <span class="product__flag">Sale!</span>
+            <a href="#" class="product__link"></a>
+            <div class="product__details">
+              <div class="product__rating raiting">
+                <ul class="raitng__list list-reset">
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                  <li class="raitng__item fa-solid fa-star">
+                  </li>
+                </ul>
+                <span class="product__star-text">Rated<strong>0</strong> out of 5</span>
+              </div>
+              <h3 class="product__title">ТРПС1-8-3 Преобразователь 4-20 мА</h3>
+              <p class="product__price">
+                <span class="product__old-price"><strike>P44.00</strike></span>
+                <u>P11.00</u>
+              </p>
             </div>
-            <h3 class="product__title">Регулятор тиристорный трехфазный</h3>
-            <p class="product__price">
-              <span class="product__old-price"><strike>P44.00</strike></span>
-              <u>P11.00</u>
-            </p>
-          </div>
-        </div>
-        <div class="swiper-slide product product-TRPS123">
-          <img src="img/TRPS123.jpg" alt="объект" class="product__img">
-          <div class="featured-product__box image-box">
-            <ul class="image-box__list list-reset">
-              <li class="image-box__item add-cart">
-                <a href="#" class="add-cart__link">Add to cart
-                  <i class="add-cart__svg fa-solid fa-cart-shopping"></i>
-                </a>
-              </li>
-              <li class="image-box__item view-details">
-                <a href="#" class="view-details__link">view details
-                  <i class="view-details__svg fa-solid fa-gears"></i>
-                </a>
-              </li>
-            </ul>
-           </div>
-          <button class="product__link btn-reset"></button>
-          <span class="product__flag">Sale!</span>
-          <a href="#" class="product__link"></a>
-          <div class="product__details">
-            <div class="product__rating raiting">
-              <ul class="raitng__list list-reset">
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-              </ul>
-              <span class="product__star-text">Rated<strong>0</strong> out of 5</span>
-            </div>
-            <h3 class="product__title">Преобразователь 4-20 мА ТРПС 1-2-3</h3>
-            <p class="product__price">
-              <span class="product__old-price"><strike>P44.00</strike></span>
-              <u>P11.00</u>
-            </p>
-          </div>
-        </div>
-        <div class="swiper-slide product product-TRPS183">
-          <img src="img/TRPS183.jpg" alt="объект" class="product__img">
-          <div class="featured-product__box image-box">
-            <ul class="image-box__list list-reset">
-              <li class="image-box__item add-cart">
-                <a href="#" class="add-cart__link">Add to cart
-                  <i class="add-cart__svg fa-solid fa-cart-shopping"></i>
-                </a>
-              </li>
-              <li class="image-box__item view-details">
-                <a href="#" class="view-details__link">view details
-                  <i class="view-details__svg fa-solid fa-gears"></i>
-                </a>
-              </li>
-            </ul>
-           </div>
-          <button class="product__link btn-reset"></button>
-          <span class="product__flag">Sale!</span>
-          <a href="#" class="product__link"></a>
-          <div class="product__details">
-            <div class="product__rating raiting">
-              <ul class="raitng__list list-reset">
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-                <li class="raitng__item fa-solid fa-star">
-                </li>
-              </ul>
-              <span class="product__star-text">Rated<strong>0</strong> out of 5</span>
-            </div>
-            <h3 class="product__title">ТРПС1-8-3 Преобразователь 4-20 мА</h3>
-            <p class="product__price">
-              <span class="product__old-price"><strike>P44.00</strike></span>
-              <u>P11.00</u>
-            </p>
           </div>
         </div>
       </div>
-      <div class="swiper-pagination-gallery"></div>
+      <div class="swiper-pagination"></div>
   </div>
 </section>
 
@@ -643,19 +664,20 @@
     <ul class="odds__list list-reset">
       <li class="odds__item odds__item--delivery">
         <h3 class="odds__title">Бесплатная доставка</h3>
-        <p class="odds__text">Lorem ipsum dolor sit amet, consectetur</p>
+        <p class="odds__text">Компании грузоперевозчиков: «Деловые Линии», «СДЭК»,
+          " Желдорэкспедиция» или другая, по согласованию с Заказчиком.</p>
       </li>
       <li class="odds__item odds__item--package">
         <h3 class="odds__title">Сохранность упаковки</h3>
-        <p class="odds__text">Lorem ipsum dolor sit amet, consectetur</p>
+        <p class="odds__text">Гарантии качества</p>
       </li>
       <li class="odds__item odds__item--safety">
         <h3 class="odds__title">Защита платежа</h3>
-        <p class="odds__text">Lorem ipsum dolor sit amet, consectetur</p>
+        <p class="odds__text">Доставка продукции осуществляется наложенным платежем по адресу указанному в реквизитах.</p>
       </li>
       <li class="odds__item odds__item--support">
         <h3 class="odds__title">Бесплатная поддержка</h3>
-        <p class="odds__text">Lorem ipsum dolor sit amet, consectetur</p>
+        <p class="odds__text">Детали заказа можно обсудить во время производства</p>
       </li>
     </ul>
   </div>
@@ -663,6 +685,14 @@
 
     </main>
     <footer class="footer">
+  <a href="#page" data-scroll  class="to-top">
+    <span class="to-top__text">Go to top</span>
+    <span class="to-top__icon">
+      <svg>
+        <use xlink:href="img/sprite.svg#to-top"></use>
+      </svg>
+    </span>
+  </a>
   <div class="footer__container container ">
     <div class="footer__address">
       <a href="/" class="footer__logo"></a>
@@ -707,13 +737,36 @@
     <div class="footer__gallery gallery">
       <h5 class="gallery__title">Галлерея</h5>
       <ul class="gallery__list list-reset">
-        <li class="gallery__item"><a href="#" class="gallery__link"></a></li>
-        <li class="gallery__item"><a href="#" class="gallery__link"></a></li>
-        <li class="gallery__item"><a href="#" class="gallery__link"></a></li>
-        <li class="gallery__item"><a href="#" class="gallery__link"></a></li>
-        <li class="gallery__item"><a href="#" class="gallery__link"></a></li>
-        <li class="gallery__item"><a href="#" class="gallery__link"></a></li>
-
+        <li class="gallery__item">
+          <a href="#" class="gallery__link ">
+            <img  src="img/SHhandle.png" alt="schema">
+          </a>
+      </li>
+        <li class="gallery__item">
+          <a href="#" class="gallery__link">
+            <img src="img/expert.png" alt="schema">
+          </a>
+      </li>
+        <li class="gallery__item">
+          <a href="#" class="gallery__link">
+            <img src="img/intellect_light_png.png" alt="lamp">
+          </a>
+      </li>
+        <li class="gallery__item">
+          <a href="#" class="gallery__link">
+            <img src="img/pulters.png" alt="lamp">
+          </a>
+      </li>
+        <li class="gallery__item">
+          <a href="#" class="gallery__link">
+            <img src="img/product-electric.png" alt="controller">
+          </a>
+      </li>
+        <li class="gallery__item">
+          <a href="#" class="gallery__link">
+            <img src="img/siglent.png" alt="controller">
+          </a>
+      </li>
       </ul>
     </div>
   </div>
@@ -724,6 +777,38 @@
   </div>
 </footer>
 <div class="overlay"></div>
+
+    <div class="graph-modal basket-modal">
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="basketmodal">
+    <button class="btn-reset graph-modal__close js-modal-close" aria-label="закрыть модальное окно">
+      <svg height="800px" width="800px" viewBox="0 0 512 512" xml:space="preserve">
+        <g>
+          <polygon points="512,59.076 452.922,0 256,196.922 59.076,0 0,59.076 196.922,256 0,452.922 59.076,512 256,315.076 452.922,512
+            512,452.922 315.076,256 		"/>
+        </g>
+      </svg>
+    </button>
+    <div class="graph-modal__content">
+      <h2>Окно</h2>
+    </div>
+  </div>
+</div>
+
+<div class="graph-modal thx-modal">
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="thx-modal">
+    <button class="btn-reset graph-modal__close js-modal-close" aria-label="закрыть модальное окно">
+      <svg height="800px" width="800px" viewBox="0 0 512 512" xml:space="preserve">
+        <g>
+          <polygon points="512,59.076 452.922,0 256,196.922 59.076,0 0,59.076 196.922,256 0,452.922 59.076,512 256,315.076 452.922,512
+            512,452.922 315.076,256 		"/>
+        </g>
+      </svg>
+    </button>
+    <div class="graph-modal__content">
+      <h2>Спасибо за заказ! Детали заказы мы уточним с вами по телефону.</h2>
+    </div>
+  </div>
+</div>
 
   </div>
 </body>

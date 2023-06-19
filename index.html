@@ -13,13 +13,16 @@
   <link rel="preload" href="fonts/Poppins-Medium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=eb405125-b825-4781-9fbd-f6f10f6ead2a&lang=ru_RU"
+    type="text/javascript"></script>
   <link rel="stylesheet" href="css/vendor.css">
   <link rel="stylesheet" href="css/main.css">
+
   <script defer src="js/main.js"></script>
 </head>
 
-<body class="page__body dis-scroll">
-      <video class="video-on-start__content video-on-start" preload="auto" muted loop>
+<body class="page__body dis-scroll visually-hidden">
+      <video class="video-on-start__content video-on-start" preload="auto" muted loop autoplay>
       <!-- <source src="video/duel.ogv" type='video/ogg; codecs="theora, vorbis"'> -->
       <source src="video/CircuitBoards_2_6sec.mp4" type="video/mp4" codecs="avc1.42E01E, mp4a.40.2">
       <!-- <source src="video/duel.webm" type='video/webm; codecs="vp8, vorbis"'> -->
@@ -27,7 +30,7 @@
     </video>
 
   <div class="site-container">
-    <header class="header">
+    <header class="header" id="page">
   <div class="container header__container">
     <a class="header__logo"></a>
     <nav class="header__nav nav">
@@ -35,11 +38,25 @@
         <li class="nav__item nav__item_active"><a href="#" class="nav__link">Главная</a></li>
         <li class="nav__item"><a href="about.html" class="nav__link">О нас</a></li>
         <li class="nav__item"><a href="shop.html" class="nav__link">Магазин</a></li>
-        <li class="nav__item"><a href="pages.html" class="nav__link">Страницы</a></li>
-        <li class="nav__item"><a href="blog.html" class="nav__link">Блог</a></li>
-        <li class="nav__item"><a href="contact.html" class="nav__link">Контакты</a></li>
+        <li class="nav__item">
+          <a href="pages.html" class="nav__link">Страницы <i class="fa-solid fa-caret-down fa-lg"></i></a>
+          <ul class="nav__sub-list list-reset">
+            <li class="nav__sub-item">
+              <a href="catalog.html" class="nav__link">Товары</a>
+            </li>
+            <li class="nav__sub-item">
+              <a href="faq.html" class="nav__link">FAQ</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav__item"><a href="index.html" class="nav__link">Блог</a></li>
+        <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
       </ul>
     </nav>
+    <button class="basket-btn btn-reset" data-graph-path="basketmodal" data-graph-animation="custom" data-graph-speed="500">
+      <i class="fa-solid fa-basket-shopping"></i>
+      <span class="amount-product">1</span>
+    </button>
     <ul class="header__contacts-list list-reset">
       <li class="header__contact">
         <a href="tel:89052216144" class="header__link telefone"><i class="tel-icon-header fa-solid fa-phone"></i>+7 905 221-61-44</a>
@@ -61,7 +78,7 @@
       <div class="hero__element element">
         <p class="element__text title">Оригинально и Качественно</p>
         <h1 class="element__title">Промышленная электроника</h1>
-        <p class="element__about">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam totam laborum optio doloribus, praesentium magni.</p>
+        <p class="element__about">Разработка. Проектирование печатных плат. Производство. Поставки оборудования по России и Таможенному союзу.</p>
         <a href="#" class="element__button btn-reset btn ">в магазин <i class="move-right fa-move-right fa-solid fa-arrow-right"></i></a>
       </div>
       <div class="hero__space"></div>
@@ -254,8 +271,9 @@
   </div>
     <div class="choose-us__information">
       <h2 class="choose-us__title title">Почему нас выбирают :</h2>
-      <p class="choose-us__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-         luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+      <p class="choose-us__text">Качественно и в сроки выполняем заказы. Производим и поставляем промышленную электронику уже много лет. Участие
+        в разработке продукции опытных специалистов.
+      </p>
       <ul class="choose-us__list list-reset">
         <li class="choose-us__point choose-us__point-quality">Контроль качества</li>
         <li class="choose-us__point choose-us__point-original">Оригинальная продукция</li>
@@ -269,9 +287,7 @@
   <div class="el-store__wrapper container">
     <div class="el-store__info">
       <h2 class="el-store__title title">Магазин Электротоваров</h2>
-      <p class="el-store__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
-         pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-          luctus nec ullamcorper mattis, pulvinar dapibus leo.
+      <p class="el-store__text">Оказываем помощь организациям, с которыми мы работаем, в принятии сложных технических решений, поддержку своей продукции и в выборе оборудования. Консультируем специалистов и потенциальных покупателей.
       </p>
       <a href="#" class="el-store__button btn-reset btn">в магазин <i class="move-right fa-move-right fa-solid fa-arrow-right"></i></a>
     </div>
@@ -320,11 +336,6 @@
     <button class="btn-reset video-block__play" aria-label="Play video">
       <svg>
         <use xlink:href="img/sprite.svg#play-button-arrows"></use>
-      </svg>
-    </button>
-    <button class="btn-reset video-block__muted" aria-label="Mute video">
-      <svg>
-        <use xlink:href="img/sprite.svg#mute"></use>
       </svg>
     </button>
     <video src="video/CircuitBoardFinal.mp4" class="video-block__content" muted loop preload="metadata"></video>
@@ -406,18 +417,16 @@
     <div class="phase-test">
       <div class="phase-test__wrap">
         <h3 class="phase-test__title title">Продукт прошел этап тестирования</h3>
-        <p class="phase-test__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-           Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+        <p class="phase-test__text">Тестирование — это длительный процесс проверок на соответствие продукта ожидаемому результату. Тестировщик не просто играет важную роль в создании продукта, а участвует на каждом этапе его разработки.
         </p>
         <ul class="phase-test__checklist list-reset">
-          <li class="phase-test__check"><i class="check-mark"></i>Dolor sit</li>
-          <li class="phase-test__check"><i class="check-mark"></i>Luctus Nec</li>
-          <li class="phase-test__check"><i class="check-mark"></i>Dapibus Leo</li>
-          <li class="phase-test__check"><i class="check-mark"></i>Ullamcorpe</li>
-          <li class="phase-test__check"><i class="check-mark"></i>Ipsum Elit</li>
-          <li class="phase-test__check"><i class="check-mark"></i>Pulvinar Ut</li>
-          <li class="phase-test__check"><i class="check-mark"></i>Adipiscing</li>
-          <li class="phase-test__check"><i class="check-mark"></i>Amet Amet</li>
+          <li class="phase-test__check"><i class="check-mark"></i>планирование тестирования</li>
+          <li class="phase-test__check"><i class="check-mark"></i>разработка тестовых случаев</li>
+          <li class="phase-test__check"><i class="check-mark"></i>выполнение тестов</li>
+          <li class="phase-test__check"><i class="check-mark"></i>сбор данных</li>
+          <li class="phase-test__check"><i class="check-mark"></i>анализ данных</li>
+          <li class="phase-test__check"><i class="check-mark"></i>исполнения тестирования</li>
+
         </ul>
         <a href="#" class="phase-test__button btn-reset btn">в магазин 
           <i class="move-right fa-solid fa-arrow-right" ></i>
@@ -428,24 +437,53 @@
 </div>
 </section>
 
+      <section class="partners">
+  <div class="container">
+    <h2 class="title title--center partners__title">Наши партнёры</h2>
+    <ul class="list-reset partners__list">
+      <li class="partners__item">
+        <a href="#" class="partners__link">
+          <img src="img/partners/Energologo.svg" alt="Logo 1" class="partners__logo">
+        </a>
+      </li>
+      <li class="partners__item">
+        <a href="#" class="partners__link">
+          <img src="img/partners/prompribor.svg" alt="Logo 2" class="partners__logo">
+        </a>
+      </li>
+      <li class="partners__item">
+        <a href="#" class="partners__link">
+          <img src="img/partners/logotipTProgress.svg" alt="Logo 3" class="partners__logo">
+        </a>
+      </li>
+      <li class="partners__item">
+        <a href="#" class="partners__link">
+          <img src="img/partners/technoKom-logo-full.svg" alt="Logo 4" class="partners__logo">
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
       <section class="odds">
   <div class="odds__container container">
     <ul class="odds__list list-reset">
       <li class="odds__item odds__item--delivery">
         <h3 class="odds__title">Бесплатная доставка</h3>
-        <p class="odds__text">Lorem ipsum dolor sit amet, consectetur</p>
+        <p class="odds__text">Компании грузоперевозчиков: «Деловые Линии», «СДЭК»,
+          " Желдорэкспедиция» или другая, по согласованию с Заказчиком.</p>
       </li>
       <li class="odds__item odds__item--package">
         <h3 class="odds__title">Сохранность упаковки</h3>
-        <p class="odds__text">Lorem ipsum dolor sit amet, consectetur</p>
+        <p class="odds__text">Гарантии качества</p>
       </li>
       <li class="odds__item odds__item--safety">
         <h3 class="odds__title">Защита платежа</h3>
-        <p class="odds__text">Lorem ipsum dolor sit amet, consectetur</p>
+        <p class="odds__text">Доставка продукции осуществляется наложенным платежем по адресу указанному в реквизитах.</p>
       </li>
       <li class="odds__item odds__item--support">
         <h3 class="odds__title">Бесплатная поддержка</h3>
-        <p class="odds__text">Lorem ipsum dolor sit amet, consectetur</p>
+        <p class="odds__text">Детали заказа можно обсудить во время производства</p>
       </li>
     </ul>
   </div>
@@ -453,6 +491,14 @@
 
     </main>
     <footer class="footer">
+  <a href="#page" data-scroll  class="to-top">
+    <span class="to-top__text">Go to top</span>
+    <span class="to-top__icon">
+      <svg>
+        <use xlink:href="img/sprite.svg#to-top"></use>
+      </svg>
+    </span>
+  </a>
   <div class="footer__container container ">
     <div class="footer__address">
       <a href="/" class="footer__logo"></a>
@@ -497,13 +543,36 @@
     <div class="footer__gallery gallery">
       <h5 class="gallery__title">Галлерея</h5>
       <ul class="gallery__list list-reset">
-        <li class="gallery__item"><a href="#" class="gallery__link"></a></li>
-        <li class="gallery__item"><a href="#" class="gallery__link"></a></li>
-        <li class="gallery__item"><a href="#" class="gallery__link"></a></li>
-        <li class="gallery__item"><a href="#" class="gallery__link"></a></li>
-        <li class="gallery__item"><a href="#" class="gallery__link"></a></li>
-        <li class="gallery__item"><a href="#" class="gallery__link"></a></li>
-
+        <li class="gallery__item">
+          <a href="#" class="gallery__link ">
+            <img  src="img/SHhandle.png" alt="schema">
+          </a>
+      </li>
+        <li class="gallery__item">
+          <a href="#" class="gallery__link">
+            <img src="img/expert.png" alt="schema">
+          </a>
+      </li>
+        <li class="gallery__item">
+          <a href="#" class="gallery__link">
+            <img src="img/intellect_light_png.png" alt="lamp">
+          </a>
+      </li>
+        <li class="gallery__item">
+          <a href="#" class="gallery__link">
+            <img src="img/pulters.png" alt="lamp">
+          </a>
+      </li>
+        <li class="gallery__item">
+          <a href="#" class="gallery__link">
+            <img src="img/product-electric.png" alt="controller">
+          </a>
+      </li>
+        <li class="gallery__item">
+          <a href="#" class="gallery__link">
+            <img src="img/siglent.png" alt="controller">
+          </a>
+      </li>
       </ul>
     </div>
   </div>
@@ -514,6 +583,38 @@
   </div>
 </footer>
 <div class="overlay"></div>
+
+    <div class="graph-modal basket-modal">
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="basketmodal">
+    <button class="btn-reset graph-modal__close js-modal-close" aria-label="закрыть модальное окно">
+      <svg height="800px" width="800px" viewBox="0 0 512 512" xml:space="preserve">
+        <g>
+          <polygon points="512,59.076 452.922,0 256,196.922 59.076,0 0,59.076 196.922,256 0,452.922 59.076,512 256,315.076 452.922,512
+            512,452.922 315.076,256 		"/>
+        </g>
+      </svg>
+    </button>
+    <div class="graph-modal__content">
+      <h2>Окно</h2>
+    </div>
+  </div>
+</div>
+
+<div class="graph-modal thx-modal">
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="thx-modal">
+    <button class="btn-reset graph-modal__close js-modal-close" aria-label="закрыть модальное окно">
+      <svg height="800px" width="800px" viewBox="0 0 512 512" xml:space="preserve">
+        <g>
+          <polygon points="512,59.076 452.922,0 256,196.922 59.076,0 0,59.076 196.922,256 0,452.922 59.076,512 256,315.076 452.922,512
+            512,452.922 315.076,256 		"/>
+        </g>
+      </svg>
+    </button>
+    <div class="graph-modal__content">
+      <h2>Спасибо за заказ! Детали заказы мы уточним с вами по телефону.</h2>
+    </div>
+  </div>
+</div>
 
   </div>
 </body>

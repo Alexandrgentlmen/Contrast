@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>КОНТРАСТ</title>
+  <link rel="preload" href="fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Poppins-ExtraLight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Poppins-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=eb405125-b825-4781-9fbd-f6f10f6ead2a&lang=ru_RU"
+    type="text/javascript"></script>
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script defer src="js/main.js"></script>
+</head>
+
+<body class="page__body">
+  <div class="site-container">
+    <header class="header" id="page">
+  <div class="container header__container">
+    <a class="header__logo"></a>
+    <nav class="header__nav nav">
+      <ul class="nav__list list-reset">
+        <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+        <li class="nav__item"><a href="about.html" class="nav__link">О нас</a></li>
+        <li class="nav__item"><a href="shop.html" class="nav__link">Магазин</a></li>
+        <li class="nav__item">
+          <a href="pages.html" class="nav__link">Страницы <i class="fa-solid fa-caret-down fa-lg"></i></a>
+          <ul class="nav__sub-list list-reset">
+            <li class="nav__sub-item">
+              <a href="catalog.html" class="nav__link">Товары</a>
+            </li>
+            <li class="nav__sub-item">
+              <a href="faq.html" class="nav__link">FAQ</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav__item"><a href="index.html" class="nav__link">Блог</a></li>
+        <li class="nav__item  nav__item_active"><a a href="#" class="nav__link">Контакты</a></li>
+      </ul>
+    </nav>
+    <button class="basket-btn btn-reset" data-graph-path="basketmodal" data-graph-animation="custom">
+      <i class="fa-solid fa-basket-shopping"></i>
+      <span class="amount-product">1</span>
+    </button>
+    <ul class="header__contacts-list list-reset">
+      <li class="header__contact">
+        <a href="tel:89052216144" class="header__link telefone"><i class="tel-icon-header fa-solid fa-phone"></i>+7 905 221-61-44</a>
+      </li>
+      <li class="header__contact">
+        <a href="tel:88129438209" class="header__link telefone">(812)943-82-09</a>
+      </li>
+      <li class="header__contact">
+        <a href="mailto:contrast-spb@inbox.ru" class="header__link email"><i class="email-icon-header fa-solid fa-envelope"></i>contrast-spb@inbox.ru</a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+    <main>
+      <section class="contacts-hero">
+  <div class="contacts-hero__conatiner container">
+    <h1 class="contacts-hero__title">Контакты</h1>
+    <ul class="list-reset breadcrumbs contacts-hero__breadcrumbs">
+      <li class="breadcrumbs__item">
+        <a href="/index.html" class="breadcrumbs__link">Главная</a>
+      </li>
+      <li class="breadcrumbs__item">
+        <a href="#" class="breadcrumbs__link">Контакты</a>
+      </li>
+    </ul>
+  </div>
+
+</section>
+
+      <section class="our-location">
+  <div class="our-location__container container">
+    <div class="our-location__contacts">
+      <div class="bg"></div>
+      <h2 class="our-location__title">Наш адрес</h2>
+      <p class="our-location__text">МЫ РАБОТАЕМ ДЛЯ ВАС!</p>
+      <ul class="our-location__information information list-reset">
+        <li class="information__telefone">
+          <a href="tel:89052216144" class="information__telefone-link"><i class="tel-icon fa-solid fa-phone"></i>+7 905 221-61-44,  </a>
+          <a href="tel:88129438209" class="information__telefone-link"><i class="tel-icon fa-solid fa-phone"></i>(812)943-82-09</a>
+        </li>
+        <li class="information__fax">факс: (812) 690-12-69</li>
+        <li class="information__email">
+          <a class="information__link email" href="mailto:contrast-spb@inbox.ru">
+            <i class="email-icon fa-solid fa-envelope"></i>contrast-spb@inbox.ru
+         </a>
+        </li>
+        <li class="information__address">Санкт-Петербург Монтажная ул., 15</li>
+        <li class="information__hourse-open hourse-open">Рабочее в ремя
+          <p class="hourse-open__monday hourse-open__monday_substring">Понедельник — Пятница</p>
+          <p class="hourse-open__times">8 — 18</p>
+          <p class="hourse-open__saturday">Суббота — Воскресенье</p>
+          <p class="hourse-open__times">Выходной</p>
+        </li>
+      </ul>
+    </div>
+    <div id="map" class="map"></div>
+  </div>
+</section>
+
+      <section class="form-message">
+  <div class="form-message__container container form">
+    <h2 class="visually-hidden">Contacts</h2>
+    <form class="form__form-contacts" action="/action_page.php">
+      <label class="form-field form__form-field">
+        <span class="form-field__caption" >Имя</span>
+        <input class="form-field__input" type="text" name="name"/>
+      </label>
+
+      <label class="form-field form__form-field">
+        <span class="form-field__caption">Email</span>
+        <input class="form-field__input" type="email" name="email"/>
+      </label>
+
+      <label class="form-field form__form-field">
+        <span class="form-field__caption">Сообщение</span>
+        <textarea class="form-field__input" name="message" cols="30" rows="4" placeholder="Ваше сообщение"></textarea>
+      </label>
+
+      <button class="form__form-send btn" type="submit">Отправить</button>
+    </form>
+  </div>
+</section>
+
+    </main>
+    <footer class="footer">
+  <a href="#page" data-scroll  class="to-top">
+    <span class="to-top__text">Go to top</span>
+    <span class="to-top__icon">
+      <svg>
+        <use xlink:href="img/sprite.svg#to-top"></use>
+      </svg>
+    </span>
+  </a>
+  <div class="footer__container container ">
+    <div class="footer__address">
+      <a href="/" class="footer__logo"></a>
+      <h2 class="footer__title">Мы Работаем Для Вас!</h2>
+      <ul class="footer__contacts-list list-reset">
+        <li class="footer__contact footer__contact-map">
+          <i class="map-icon fa-solid fa-map-location"></i>ООО «Контраст г. Санкт-Петербург
+        </li>
+        <li class="footer__contact footer__contact-tel">
+          <a href="tel:89052216144" class="footer__link telefone"><i class="tel-icon fa-solid fa-phone"></i>+7 905 221-61-44</a><br>
+          <a href="tel:88129438209" class="footer__link telefone"><i class="tel-icon fa-solid fa-phone"></i>(812)943-82-09</a>
+        </li>
+        <li class="footer__contact footer__contact-email">
+          <a href="mailto:contrast-spb@inbox.ru" class="footer__link email">
+            <i class="email-icon fa-solid fa-envelope"></i>contrast-spb@inbox.ru
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer__media media">
+      <h3 class="media__title">Присоединяйтесь к нам</h3>
+      <ul class="media__list list-reset">
+        <li class="media__item">
+          <a href="#" class="media__link">vkontakte</a>
+        </li>
+        <li class="media__item">
+          <a href="#" class="media__link">telegram</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer__nav">
+      <h5 class="footer__nav-title">Меню</h5>
+      <ul class="footer-nav list-reset">
+        <li class="footer-nav__item"><a href="#" class="footer-nav__link footer-nav__link_active">Главная</a></li>
+        <li class="footer-nav__item"><a href="#" class="footer-nav__link">О нас</a></li>
+        <li class="footer-nav__item"><a href="#" class="footer-nav__link">Магазин</a></li>
+        <li class="footer-nav__item"><a href="#" class="footer-nav__link">Страницы</a></li>
+        <li class="footer-nav__item"><a href="#" class="footer-nav__link">Блог</a></li>
+        <li class="footer-nav__item"><a href="#" class="footer-nav__link">Контакты</a></li>
+      </ul>
+    </div>
+    <div class="footer__gallery gallery">
+      <h5 class="gallery__title">Галлерея</h5>
+      <ul class="gallery__list list-reset">
+        <li class="gallery__item">
+          <a href="#" class="gallery__link ">
+            <img  src="img/SHhandle.png" alt="schema">
+          </a>
+      </li>
+        <li class="gallery__item">
+          <a href="#" class="gallery__link">
+            <img src="img/expert.png" alt="schema">
+          </a>
+      </li>
+        <li class="gallery__item">
+          <a href="#" class="gallery__link">
+            <img src="img/intellect_light_png.png" alt="lamp">
+          </a>
+      </li>
+        <li class="gallery__item">
+          <a href="#" class="gallery__link">
+            <img src="img/pulters.png" alt="lamp">
+          </a>
+      </li>
+        <li class="gallery__item">
+          <a href="#" class="gallery__link">
+            <img src="img/product-electric.png" alt="controller">
+          </a>
+      </li>
+        <li class="gallery__item">
+          <a href="#" class="gallery__link">
+            <img src="img/siglent.png" alt="controller">
+          </a>
+      </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__copyright">
+    <div class="container">
+      <small>© All rights reserved. Made with <span>by EH.AG Studio</span></small>
+    </div>
+  </div>
+</footer>
+<div class="overlay"></div>
+
+    <div class="graph-modal basket-modal">
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="basketmodal">
+    <button class="btn-reset graph-modal__close js-modal-close" aria-label="закрыть модальное окно">
+      <svg height="800px" width="800px" viewBox="0 0 512 512" xml:space="preserve">
+        <g>
+          <polygon points="512,59.076 452.922,0 256,196.922 59.076,0 0,59.076 196.922,256 0,452.922 59.076,512 256,315.076 452.922,512
+            512,452.922 315.076,256 		"/>
+        </g>
+      </svg>
+    </button>
+    <div class="graph-modal__content">
+      <h2>Окно</h2>
+    </div>
+  </div>
+</div>
+
+<div class="graph-modal thx-modal">
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="thx-modal">
+    <button class="btn-reset graph-modal__close js-modal-close" aria-label="закрыть модальное окно">
+      <svg height="800px" width="800px" viewBox="0 0 512 512" xml:space="preserve">
+        <g>
+          <polygon points="512,59.076 452.922,0 256,196.922 59.076,0 0,59.076 196.922,256 0,452.922 59.076,512 256,315.076 452.922,512
+            512,452.922 315.076,256 		"/>
+        </g>
+      </svg>
+    </button>
+    <div class="graph-modal__content">
+      <h2>Спасибо за заказ! Детали заказы мы уточним с вами по телефону.</h2>
+    </div>
+  </div>
+</div>
+
+  </div>
+</body>
+
+</html>
